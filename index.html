@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<h1> Mico Ellerich Comia </h1>
+<ul>
+	<li><a href="#AboutMe"> About Me </a></li>
+	<li><a href="#Skills"> Skills </a></li>
+	<li><a href="#Projects"> Projects </a></li>
+	<li><a href="#Contact"> Contact </a></li>
+</ul>
+
+<div id="AboutMe">
+<h2> About Me </h2>
+<p> Hello! I am currently a first year MDTI student at the University of Ottawa. I worked as a Machine Learning Researcher for the FinTech company, GCash, where I mainly developed credit scoring models. </p>
+</div>
+
+<div id="Skills">
+<h2> Skills </h2>
+<ol type="1">
+	<li> Programming </li>
+	<li>Machine Learning</li>
+	<li>Stakeholder Management</li>
+</ol>
+</div>
+
+<div id="Projects">
+<h2> Projects </h2>
+<table>
+	<tr>
+		<th> GScore </th>
+		<th> Payment Graph Network </th>
+	</tr>
+	<tr>
+		<td><center><img src="gscore.jpg" width="300" height="250"></center></td>
+		<td><center><img src="graph.png" width="300" height="250"></center></td>
+	</tr>
+	<tr>
+		<td> GScore is a ML-based credit scoring system that calculates a user's credit score based on their transactions in GCash.</td>
+		<td> Payment Graph Network aims to improve GScore' predictive capabilities by making use of graph networks to discover if there are connections between creditworthiness and the merchant a user interacts with </td>
+	</tr>
+</table>
+</div>
+
+<div id="Contact">
+<h2> Contact </h2>
+<form id="ContactForm" onsubmit="return validate();">
+	<label for="name">Name:</label>
+	<input type="text" id="nameID" name="name" required><br>
+	<label for="email">Email:</label>
+	<input type="email" id="emailID" name="email" required><br>
+	<label for="message">Message:</label><br>
+	<textarea rows="4" cols="50" name="comment" id="messageID" placeholder="Enter message here" required></textarea><br><br>
+	<input type="submit" value="Submit">
+</form>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+function validate(){
+	var name = document.getElementById("nameID").value
+	var email = document.getElementById("emailID").value
+	var message = document.getElementById("messageID").value
+
+	if (name){
+		if(email){
+			if(message){
+				alert("Form submitted.\n"
+					+"\nName: "+name
+					+"\nEmail: "+email
+					+"\nMessage: "+message)
+				return True
+			}else{
+				alert("Message is blank.")
+				return False
+			}
+		}else{
+			alert("Email is blank.")
+			return False
+		}
+	}else{
+		alert("Name is blank")
+		return False
+	}
+}
+</script>
